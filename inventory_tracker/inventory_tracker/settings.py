@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'inventory_tracker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'InventoryDB',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'admin',
-        'HOST': 'localhost'
+        'HOST': 'db'
     }
 }
 
