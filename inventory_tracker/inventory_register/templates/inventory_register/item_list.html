@@ -1,5 +1,26 @@
 {% extends "inventory_register/base.html" %}
 
 {% block content %}
-    <p>We'll show list of items from the table</p>
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Item Name</td>
+            <td>Item Code</td>
+            <td>Serial Number</td>
+            <td>Quantity</td>
+            <td>Warehouse</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in item_list %}
+            <tr>
+                <td>{{item.itemName}}</td>
+                <td>{{item.itemCode}}</td>
+                <td>{{item.serialNum}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.warehouse}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock content %}
