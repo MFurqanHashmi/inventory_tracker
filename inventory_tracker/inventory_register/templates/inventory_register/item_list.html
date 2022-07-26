@@ -19,6 +19,11 @@
                 <td>{{item.serialNum}}</td>
                 <td>{{item.quantity}}</td>
                 <td>{{item.warehouse}}</td>
+                <td>
+                    <a href="{% url 'update_item' item.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                </td>
             </tr>
         {% endfor %}
     </tbody>
