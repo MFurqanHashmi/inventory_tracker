@@ -34,5 +34,7 @@ def item_form(request,id=0):
         return redirect('/item/list')
 
 # Delete operation
-def item_delete(request):
-    return
+def item_delete(request,id):
+    item = InventoryItem.objects.get(pk=id)
+    item.delete()
+    return redirect('/item/list')

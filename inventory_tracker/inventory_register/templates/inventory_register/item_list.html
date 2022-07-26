@@ -10,6 +10,11 @@
             <td>Quantity</td>
             <td>Warehouse</td>
         </tr>
+        <td>
+            <a href="{% url 'create_item' %}" class="btn btn-outline-success">
+                <i class="fas fa-plus"></i> Add New
+            </a>
+        </td>
     </thead>
     <tbody>
         {% for item in item_list %}
@@ -23,6 +28,12 @@
                     <a href="{% url 'update_item' item.id %}" class="btn text-secondary px-0">
                         <i class="far fa-edit fa-lg"></i>
                     </a>
+                    <form action="{% url 'delete_item' item.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
                 </td>
             </tr>
         {% endfor %}
