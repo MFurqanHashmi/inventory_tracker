@@ -1,6 +1,18 @@
 {% extends "inventory_register/base.html" %}
 
 {% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <a href="{% url 'create_item' %}" class="btn btn-outline-success">
+            <i class="fas fa-plus"></i> Add New Item
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="{% url 'create_warehouse' %}" class="btn btn-outline-success">
+            <i class="fas fa-plus"></i> Add New Warehouse
+        </a>
+    </div>
+</div>
 <table class="table table-borderless">
     <thead class="border-bottom font-weight-bold">
         <tr>
@@ -10,11 +22,6 @@
             <td>Quantity</td>
             <td>Warehouse</td>
         </tr>
-        <td>
-            <a href="{% url 'create_item' %}" class="btn btn-outline-success">
-                <i class="fas fa-plus"></i> Add New
-            </a>
-        </td>
     </thead>
     <tbody>
         {% for item in item_list %}

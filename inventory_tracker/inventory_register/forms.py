@@ -21,7 +21,7 @@ class ItemForm(forms.ModelForm):
         self.fields['serialNum'].initial = ""
         self.fields['warehouse'].initial = ""
         # self.fields['warehouse'].empty_label = "Select Warehouse"
-        self.fields['itemCode'].required = False
+        # self.fields['itemCode'].required = False
 
 class WarehouseForm(forms.ModelForm):
 
