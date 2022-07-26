@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from .forms import ItemForm
+from .forms import ItemForm, WarehouseForm
 from .models import InventoryItem
+
 
 # Create your views here.
 
@@ -38,3 +39,16 @@ def item_delete(request,id):
     item = InventoryItem.objects.get(pk=id)
     item.delete()
     return redirect('/item/list')
+
+# Warehouse Form
+def warehouse_form(request):
+    if request.method == "GET":
+         form = WarehouseForm()
+         return render(request, "inventory_register/warehouse_form.html", {'form':form})
+    else:
+        form = WarehouseForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            print("Form Entries were invalid")
+        return redirect('/item/list')

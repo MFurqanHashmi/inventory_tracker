@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', admin.site.urls),  # Have this here because I don't want to create a welcome page
+    # path('', admin.site.urls),  # Have this here because I don't want to create a welcome page
     path('admin/', admin.site.urls),
     path('item/', include('inventory_register.urls'))
     

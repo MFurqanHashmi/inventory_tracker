@@ -6,5 +6,7 @@ urlpatterns = [
     path('', views.item_form, name="create_item"),  # Used to create new entries (CREATE)
     path('list/', views.item_list, name="list_items"),  # Used to display item list (READ)
     path('<int:id>/', views.item_form, name="update_item"),   # Used to update item values (UPDATE)
-    path('delete/<int:id>/', views.item_delete, name="delete_item")  # Used to delete item entries (DELETE)
+    path('delete/<int:id>/', views.item_delete, name="delete_item"),  # Used to delete item entries (DELETE)
+
+    path('warehouse/', views.warehouse_form, name="create_warehouse"),  # Used to create new warehouse (CREATE)
 ]

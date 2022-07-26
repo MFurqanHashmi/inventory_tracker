@@ -3,15 +3,17 @@ from django.core.validators import MinLengthValidator, MaxValueValidator, MinVal
 
 # Create your models here.
 class Warehouse(models.Model):
-    warehouseName = models.CharField(max_length=100)
+    warehouseName = models.CharField(max_length=100, validators=[MinLengthValidator(1)], default="UNKNOWN")
+    warehouseLocation = models.CharField(max_length=100, validators=[MinLengthValidator(1)], default="UNKNOWN")
+    warehouseManager = models.CharField(max_length=100, validators=[MinLengthValidator(1)], default="UNKNOWN")
 
     def __str__(self):
         return self.warehouseName
 
 class InventoryItem(models.Model):
-    itemName = models.CharField(max_length=100, validators=[MinLengthValidator(1)])
-    itemCode = models.CharField(max_length=100, validators=[MinLengthValidator(1)])
-    serialNum  = models.CharField(max_length=100, validators=[MinLengthValidator(1)])
+    itemName = models.CharField(max_length=100, validators=[MinLengthValidator(1)], default="UNKNOWN")
+    itemCode = models.CharField(max_length=100, validators=[MinLengthValidator(1)], default="UNKNOWN")
+    serialNum  = models.CharField(max_length=100, validators=[MinLengthValidator(1)], default="UNKNOWN")
     quantity = models.IntegerField(default=1,
         validators=[
             MaxValueValidator(1000),
