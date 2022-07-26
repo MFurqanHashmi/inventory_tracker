@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import ItemForm
 
 # Create your views here.
@@ -8,8 +8,16 @@ def item_list(request):
 
 # GET/POST requests for inset/update operations
 def item_form(request):
-    form = ItemForm()
-    return render(request, "inventory_register/item_form.html", {'form':form})
+    if request.method == "GET":
+        form = ItemForm()
+        return render(request, "inventory_register/item_form.html", {'form':form})
+    else:
+        print("****************////////////// POST REQUEST //////////////****************")
+        form = ItemForm(request.POST)
+        if form.is_valid():
+            print("////////////// FORM IS VALID //////////////")
+            form.save()
+        return redirect('/item/list')
 
 # Delete operation
 def item_delete(request):

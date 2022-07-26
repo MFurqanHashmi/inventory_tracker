@@ -1,8 +1,20 @@
 {% extends "inventory_register/base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-    <form action="" method="post" autocomplete="off">
-        {%csrf_token%}
-        {{form}}
-    </form>
+<form action="" method="post" autocomplete="off">
+    {%csrf_token%}
+    {{form.itemName|as_crispy_field}}
+    {{form.itemCode|as_crispy_field}}
+    {{form.serialNum|as_crispy_field}}
+    <div class="row">
+        <div class="col-md-4">
+            {{form.quantity|as_crispy_field}}
+        </div>
+        <div class="col-md-8">
+            {{form.warehouse|as_crispy_field}}
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success"><i class="fa-solid fa-database"></i>Submit</button>
+</form>
 {% endblock content %}
