@@ -6,7 +6,7 @@ For ease of demonstration the web app can be deployed using docker on any machin
 
 ***Setup Instructions***
 1. Clone the project onto your machine
-	`git clone …`
+	`git clone https://github.com/MFurqanHashmi/inventory_tracker.git`
 2. Move into the project directory
 	 `cd inventory_tracker`
 3. Perform migrations to setup the DB
