@@ -1,4 +1,4 @@
-![alt text](https://github.com/MFurqanHashmi/inventory_tracker/blob/main/README%20Images/Item%20List%20-%20Empty.pngraw=true)
+![alt text](https://github.com/MFurqanHashmi/inventory_tracker/blob/main/README%20Images/Item%20List%20-%20Empty.png?raw=true)
 This is a inventory tracking application to demonstrate basic CRUD operations in a web app. It use Django as it's backend framework along with Bootstrap and Crisp Forms for the frontend. 
 
 For ease of demonstration the web app can be deployed using docker on any machine.
